@@ -9,6 +9,8 @@ const guessType = (name) => {
   return n.includes('PAN') ? 'PAN_CARD' : n.includes('AADHAAR') ? 'AADHAAR_CARD' : n.includes('BILL') ? 'ELECTRICITY_BILL' : n.includes('STATEMENT') ? 'BANK_STATEMENT' : n.includes('LICENCE') || n.includes('DL') ? 'DRIVING_LICENCE' : '';
 };
 
+
+
 export function ApplicantHome() {
   const [apps, setApps] = useState(null);
   useEffect(() => { api('/applications/mine').then(setApps); }, []);
